@@ -1,20 +1,17 @@
-= Welcome to Template Tutorial
+= About the Workshop
 :page-layout: home
 :!sectids:
 
 [.text-center.strong]
-== Publish Services to Kubernetes
+== Objectives
 
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+* Deploy and use Red Hat Inference Server.
 
 [.tiles.browse]
-== Browse modules
+== Takeaways
+* Be able to deploy Inference Server with whichever accelerators.
 
-[.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+== Let's start!
 
-[.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+* Click xref:01-setup.adoc[here] to start the workshop.
+

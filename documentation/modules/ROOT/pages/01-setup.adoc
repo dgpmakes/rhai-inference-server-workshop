@@ -4,6 +4,7 @@ include::_attributes.adoc[]
 [#prerequisite]
 == Prerequisite CLI tools
 
+You will need the following:
 include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/prerequisites-kubernetes.adoc[]
 |===
 
