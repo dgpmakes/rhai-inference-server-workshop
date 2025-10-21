@@ -89,11 +89,11 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Template Tutorial</a></li>
+    <li><a href="index.html">Red Hat Inference Server Workshop</a></li>
     <li><a href="01-setup.html">1. Setup</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/dgpmakes/rh-inference-server-workshop/edit/master/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/dgpmakes/rhai-inference-server-workshop/edit/master/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -101,6 +101,13 @@
 <div class="sect1">
 <h2 id="prerequisite"><a class="anchor" href="#prerequisite"></a>Prerequisite CLI tools</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>You will need the following:
+:kubernetes-version: v1.26.1
+:minikube-version: v1.29.0
+:maven-version: 3.9.0
+:java-version: 17</p>
+</div>
 <div class="paragraph">
 <p>The following CLI tools are required for running the exercises in this tutorial.
 Please have them installed and configured before you get started with any of the tutorial chapters.</p>
@@ -140,16 +147,16 @@ Please have them installed and configured before you get started with any of the
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://download.virtualbox.org/virtualbox/6.1.6/VirtualBox-6.1.6-137129-Win.exe">Download</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://kubernetes.io/docs/tasks/tools/install-minikube">Minikube</a> v1.29.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/v1.29.0/minikube-darwin-amd64">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/v1.29.0/minikube-linux-amd64">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/v1.29.0/minikube-windows-amd64.exe">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://kubernetes.io/docs/tasks/tools/install-minikube">Minikube</a> {minikube-version}</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/{minikube-version}/minikube-darwin-amd64">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/{minikube-version}/minikube-linux-amd64">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/kubernetes/minikube/releases/download/{minikube-version}/minikube-windows-amd64.exe">Download</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>kubectl v1.26.1</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/darwin/amd64/kubectl">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/linux/amd64/kubectl">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/v1.26.1/bin/windows/amd64/kubectl.exe">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>kubectl {kubernetes-version}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/{kubernetes-version}/bin/darwin/amd64/kubectl">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/{kubernetes-version}/bin/linux/amd64/kubectl">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://storage.googleapis.com/kubernetes-release/release/{kubernetes-version}/bin/windows/amd64/kubectl.exe">Download</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/wercker/stern">stern</a></p></td>
@@ -158,10 +165,10 @@ Please have them installed and configured before you get started with any of the
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/stern/stern/releases/download/v1.22.0/stern_1.22.0_windows_amd64.tar.gz">Download</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Apache Maven 3.9.0</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz">Download</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Apache Maven {maven-version}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/{maven-version}/binaries/apache-maven-{maven-version}-bin.tar.gz">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/{maven-version}/binaries/apache-maven-{maven-version}-bin.tar.gz">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://archive.apache.org/dist/maven/maven-3/{maven-version}/binaries/apache-maven-{maven-version}-bin.tar.gz">Download</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -252,7 +259,7 @@ Although they are used in the tutorial, you could use others without any problem
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version=v1.26.1 --vm-driver=virtualbox -p my_profile</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version={kubernetes-version} --vm-driver=virtualbox -p my_profile</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -260,7 +267,7 @@ Although they are used in the tutorial, you could use others without any problem
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version=v1.26.1 --vm-driver=kvm2 -p my_profile</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version={kubernetes-version} --vm-driver=kvm2 -p my_profile</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -268,7 +275,7 @@ Although they are used in the tutorial, you could use others without any problem
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version=v1.26.1 --vm-driver=hyperv -p my_profile</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">minikube start --memory=8192 --cpus=3 --kubernetes-version={kubernetes-version} --vm-driver=hyperv -p my_profile</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -279,10 +286,10 @@ Although they are used in the tutorial, you could use others without any problem
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">😄  [my_profile] minikube v1.20.0 on Darwin 11.3
 ✅  Created a new profile : my_profile
 ✅  minikube profile was successfully set to my_profile
-😄  [default] minikube v1.29.0 on Darwin 11.3
+😄  [default] minikube {minikube-version} on Darwin 11.3
 ✨  Selecting 'virtualbox' driver from user configuration (alternates: [hyperkit])
 🔥  Creating virtualbox VM (CPUs=2, Memory=8192MB, Disk=50000MB) ...
-🐳  Preparing Kubernetes v1.26.1 on Docker '20.10.6' ...
+🐳  Preparing Kubernetes {kubernetes-version} on Docker '20.10.6' ...
     ▪ apiserver.enable-admission-plugins=LimitRanger,NamespaceExists,NamespaceLifecycle,ResourceQuota,ServiceAccount,DefaultStorageClass,MutatingAdmissionWebhook
 🚜  Pulling images ...
 🚀  Launching Kubernetes ...
@@ -323,7 +330,7 @@ Once you have your cluster, you can download the latest OpenShift client(oc) fro
 <div class="listingblock console-output">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Client Version: 4.7.0-202102130115.p0-c66c03f
-Kubernetes Version: v1.26.1</code></pre>
+Kubernetes Version: {kubernetes-version}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -366,7 +373,7 @@ Kubernetes Version: v1.26.1</code></pre>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="index.html">Template Tutorial</a></span>
+  <span class="prev"><a href="index.html">Red Hat Inference Server Workshop</a></span>
   <span class="next"><a href="02-deploy.html">2. Deploy Service</a></span>
 </nav>
 </article>
